@@ -14,10 +14,12 @@
 
 char	*ft_strchr(char *str, int c)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i <= (int)ft_strlen(str) && str[i] != (char)c)
 		i++;
-	return (i > (int)ft_strlen(str) ? NULL : &str[i]);
+	if (i > (int)ft_strlen(str))
+		return (NULL);
+	return (&str[i]);
 }

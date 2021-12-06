@@ -19,9 +19,9 @@ int	ft_isspace(char c)
 
 int	ft_atoi(char *str)
 {
-	int i;
-	int res;
-	int minus;
+	int	i;
+	int	res;
+	int	minus;
 
 	minus = 1;
 	i = 0;

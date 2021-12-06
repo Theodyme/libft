@@ -14,7 +14,7 @@
 
 size_t	ft_strlen(char *str)
 {
-	char *i;
+	char	*i;
 
 	i = str;
 	while (*i)

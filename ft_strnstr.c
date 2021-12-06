@@ -15,8 +15,8 @@
 
 char	*ft_strnstr(char *str, char *to_find, size_t n)
 {
-	size_t i;
-	size_t j;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
 	if (!*to_find)

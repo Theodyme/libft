@@ -12,10 +12,10 @@
 
 #include "libft.h"
 
-int		ft_countwords(char const *s, char c)
+int	ft_countwords(char const *s, char c)
 {
-	int count;
-	int i;
+	int	count;
+	int	i;
 
 	i = 0;
 	count = 0;
@@ -28,7 +28,7 @@ int		ft_countwords(char const *s, char c)
 	return (count);
 }
 
-int		ft_getnxtlen(const char *s, char c)
+int	ft_getnxtlen(const char *s, char c)
 {
 	int	i;
 
@@ -42,7 +42,7 @@ int		ft_getnxtlen(const char *s, char c)
 
 void	*ft_free(char **tab, int words)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < words)
@@ -63,19 +63,20 @@ char	**ft_split(char const *s, char c)
 	if (!s)
 		return (NULL);
 	words = ft_countwords(s, c);
-	if (!(tab = malloc(sizeof(char *) * (words + 1))))
+	tab = malloc(sizeof(char *) * (words + 1));
+	if (!tab)
 		return (NULL);
 	while (i < words && (*s != 0 && *s == c))
 		s++;
 	while (i < words)
 	{
-		if (!(tab[i] = malloc(sizeof(char) * (ft_getnxtlen(s, c) + 1))))
+		tab[i] = malloc(sizeof(char) * (ft_getnxtlen(s, c) + 1));
+		if (!tab[i])
 			return (ft_free(tab, words));
-		ft_strlcpy(tab[i], s, ft_getnxtlen(s, c) + 1);
+		ft_strlcpy(tab[i++], s, ft_getnxtlen(s, c) + 1);
 		s += ft_getnxtlen(s, c);
 		while (*s != 0 && *s == c)
 			s++;
-		++i;
 	}
 	tab[i] = 0;
 	return (tab);

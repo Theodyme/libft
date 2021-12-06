@@ -22,11 +22,23 @@ void	ft_checknegative(int *n, int *flag, int *size)
 	}
 }
 
+int	ft_intlen(int n)
+{
+	int	ct;
+
+	ct = 0;
+	while (n >= 10)
+	{
+		n /= 10;
+		ct++;
+	}
+	return (ct);
+}
+
 char	*ft_itoa(int n)
 {
 	char	*str;
 	int		size;
-	int		ncp;
 	int		flag;
 
 	size = 1;
@@ -34,10 +46,9 @@ char	*ft_itoa(int n)
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
 	ft_checknegative(&n, &flag, &size);
-	ncp = n;
-	while (ncp /= 10)
-		size++;
-	if (!(str = (char *)malloc(sizeof(char) * size + 1)))
+	size = ft_intlen(n);
+	str = (char *)malloc(sizeof(char) * size + 1));
+	if (!str)
 		return (NULL);
 	str[size--] = '\0';
 	while (size >= 0)
