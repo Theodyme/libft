@@ -27,11 +27,11 @@ int	ft_intlen(int n)
 	int	ct;
 
 	ct = 0;
-	while (n >= 10)
+	while (n /= 10)
 	{
-		n /= 10;
 		ct++;
 	}
+	ct++;
 	return (ct);
 }
 
@@ -47,7 +47,7 @@ char	*ft_itoa(int n)
 		return (ft_strdup("-2147483648"));
 	ft_checknegative(&n, &flag, &size);
 	size = ft_intlen(n);
-	str = (char *)malloc(sizeof(char) * size + 1));
+	str = (char *)malloc(sizeof(char) * size + 1);
 	if (!str)
 		return (NULL);
 	str[size--] = '\0';

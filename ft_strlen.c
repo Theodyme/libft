@@ -12,11 +12,11 @@
 
 #include <stdlib.h>
 
-size_t	ft_strlen(char *str)
+size_t	ft_strlen(const char *str)
 {
 	char	*i;
 
-	i = str;
+	i = (char *)str;
 	while (*i)
 		i++;
 	return (i - str);

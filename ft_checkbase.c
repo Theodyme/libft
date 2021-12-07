@@ -9,14 +9,17 @@
 /*   Updated: 2021/12/06 17:57:53 by flplace          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
 int	ft_checkbase(char *base)
 {
 	int	i;
 	int	j;
+	int	baselen;
 
 	i = 0;
 	j = 1;
+	baselen = ft_strlen(base);
 	if (baselen == 0 || baselen == 1)
 		return (0);
 	while (base[i])

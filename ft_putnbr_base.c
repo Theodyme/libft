@@ -13,7 +13,7 @@
 #include <unistd.h>
 #include "libft.h"
 
-oid	ft_putnbr_base(int nbr, char *base)
+void	ft_putnbr_base(int nbr, char *base)
 {
 	unsigned int	n;
 	int				baselen;

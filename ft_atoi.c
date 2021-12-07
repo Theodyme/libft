@@ -17,7 +17,7 @@ int	ft_isspace(char c)
 	return ((c > 8 && c < 14) || c == 32);
 }
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	int	i;
 	int	res;
